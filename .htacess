@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect / to index.html
+RewriteRule ^$ /index.html [L]
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Redirect pretty URLs to their corresponding .html files
+RewriteRule ^about-us$ /about-us.html [L]
+RewriteRule ^coming-soon$ /coming-soon.html [L]
+RewriteRule ^contact$ /contact.html [L]
+RewriteRule ^packages$ /packages.html [L]
+RewriteRule ^testimonial$ /testimonial.html [L]
